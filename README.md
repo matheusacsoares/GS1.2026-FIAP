@@ -6,6 +6,9 @@
 * Maria Luiza Vieira Freitas | RM: 571535
 * Matheus Arruda Camara Soares | RM: 571594
 
+## Link do projeto no Wokwi
+https://wokwi.com/projects/465380405855320065
+
 
 ---
 
