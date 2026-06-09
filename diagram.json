@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "author": "Matheus Soares",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -271.8, "left": -218, "attrs": {} },
+    { "type": "wokwi-breadboard-mini", "id": "bb2", "top": -212.6, "left": 429.6, "attrs": {} },
+    {
+      "type": "board-esp32-s2-devkitm-1",
+      "id": "esp",
+      "top": -282.71,
+      "left": 148.57,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -342.4,
+      "left": -239.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -431.7,
+      "left": -24.6,
+      "attrs": { "temperature": "77.3" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -5.78, "left": -122.48, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd2",
+      "top": -60.8,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": -206.4,
+      "left": 312,
+      "attrs": { "color": "lime" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -147.6,
+      "left": 570.2,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -101.65,
+      "left": 595.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -214.8,
+      "left": 426.6,
+      "attrs": { "color": "orange", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -168.55,
+      "left": 593.8,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -214.8,
+      "left": 570.2,
+      "attrs": { "color": "orange", "flip": "" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -147.6,
+      "left": 426.6,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -101.35,
+      "left": 382.6,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -168.55,
+      "left": 382.6,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": -134.4,
+      "left": 604.8,
+      "attrs": { "text": "Temperatura" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": -201.6,
+      "left": 614.4,
+      "attrs": { "text": "Bateria baixa" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -124.8,
+      "left": 374.4,
+      "attrs": { "text": "Impacto" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": -240,
+      "left": 374.4,
+      "attrs": { "text": "Alerta\nSaldo\nEnerg." }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": -240,
+      "left": 480,
+      "attrs": { "text": "ALERTAS" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text6",
+      "top": -403.2,
+      "left": 38.4,
+      "attrs": { "text": "Sensor de\nTemperatura" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text7",
+      "top": -393.6,
+      "left": -211.2,
+      "attrs": { "text": "LDR (sensor\nde luminosidade)" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text8",
+      "top": 67.2,
+      "left": -172.8,
+      "attrs": { "text": "MPU6050\nGiroscópio + Acelerômetro\n" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text9",
+      "top": -230.4,
+      "left": 307.2,
+      "attrs": { "text": "Bateria" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text10",
+      "top": -57.6,
+      "left": 451.2,
+      "attrs": { "text": "DISPLAY" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:5V", "bb1:bp.25", "red", [ "h0" ] ],
+    [ "esp:GND.1", "bb1:bn.25", "black", [ "h0" ] ],
+    [ "bb1:bp.24", "bb1:tp.24", "red", [ "v0" ] ],
+    [ "bb1:tn.23", "bb1:bn.23", "black", [ "v0" ] ],
+    [ "ldr1:VCC", "bb1:tp.13", "red", [ "h0" ] ],
+    [ "ldr1:GND", "bb1:tp.12", "black", [ "h0" ] ],
+    [ "dht1:VCC", "bb1:tp.16", "red", [ "v0" ] ],
+    [ "dht1:GND", "bb1:tn.19", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:2", "blue", [ "v9.6", "h134.5", "v76.8" ] ],
+    [ "ldr1:AO", "esp:1", "green", [ "h211.2", "v56.9" ] ],
+    [ "lcd2:GND", "bb1:bn.21", "black", [ "h0" ] ],
+    [ "imu1:GND", "bb1:bn.12", "black", [ "v0" ] ],
+    [ "imu1:VCC", "bb1:bp.13", "red", [ "v0" ] ],
+    [ "imu1:SDA", "bb1:20b.j", "blue", [ "v-38.4", "h67.28" ] ],
+    [ "lcd2:SDA", "bb1:20b.i", "blue", [ "h0" ] ],
+    [ "lcd2:SCL", "bb1:21b.i", "purple", [ "h0" ] ],
+    [ "imu1:SCL", "bb1:21b.j", "purple", [ "v-28.8", "h0.08" ] ],
+    [ "bargraph1:A1", "esp:42", "green", [ "h0" ] ],
+    [ "bargraph1:A2", "esp:41", "green", [ "h0" ] ],
+    [ "bargraph1:A3", "esp:40", "green", [ "h0" ] ],
+    [ "bargraph1:A4", "esp:39", "green", [ "h0" ] ],
+    [ "bargraph1:A5", "esp:38", "green", [ "h0" ] ],
+    [ "bargraph1:A6", "esp:37", "green", [ "h0" ] ],
+    [ "bargraph1:A7", "esp:36", "green", [ "h0" ] ],
+    [ "bb1:21b.f", "esp:10", "purple", [ "v0" ] ],
+    [ "esp:9", "bb1:20b.f", "blue", [ "h-163.2" ] ],
+    [ "bargraph1:A8", "esp:35", "green", [ "h0" ] ],
+    [ "esp:34", "bargraph1:A9", "green", [ "h0" ] ],
+    [ "bargraph1:A10", "esp:33", "green", [ "h0" ] ],
+    [ "bargraph1:C10", "bargraph1:C9", "black", [ "h9.82", "v-9.61" ] ],
+    [ "bargraph1:C9", "bargraph1:C8", "black", [ "h9.82", "v-0.01" ] ],
+    [ "bargraph1:C8", "bargraph1:C7", "black", [ "h9.82", "v-9.61" ] ],
+    [ "bargraph1:C7", "bargraph1:C6", "black", [ "h9.82", "v-9.61" ] ],
+    [ "bargraph1:C6", "bargraph1:C5", "black", [ "h9.82", "v-9.61" ] ],
+    [ "bargraph1:C5", "bargraph1:C4", "black", [ "h9.82", "v-9.61" ] ],
+    [ "bargraph1:C4", "bargraph1:C3", "black", [ "h9.82", "v-9.6" ] ],
+    [ "bargraph1:C3", "bargraph1:C2", "black", [ "h9.82", "v-9.6" ] ],
+    [ "bargraph1:C2", "bargraph1:C1", "black", [ "h9.82", "v-9.6" ] ],
+    [ "lcd2:VCC", "bb1:bp.22", "red", [ "h-297.6", "v0.1" ] ],
+    [ "esp:GND.2", "bb2:9b.f", "black", [ "v-9.6", "h278.4" ] ],
+    [ "esp:GND.2", "bb2:9t.e", "black", [ "v-9.6", "h278.4" ] ],
+    [ "led1:C", "bb2:9t.d", "green", [ "v0" ] ],
+    [ "led3:C", "bb2:9t.d", "green", [ "v0" ] ],
+    [ "bb2:16b.j", "bb2:9b.j", "green", [ "v0" ] ],
+    [ "bb2:2b.j", "bb2:9b.j", "green", [ "v0" ] ],
+    [ "r2:2", "esp:19", "green", [ "v0" ] ],
+    [ "r3:1", "esp:18", "green", [ "v0", "h9.6", "v211.2" ] ],
+    [ "r4:2", "esp:21", "green", [ "v0", "h-18", "v182.4" ] ],
+    [ "r1:2", "esp:20", "green", [ "v0", "h-8.4", "v124.8" ] ],
+    [ "esp:GND.2", "bargraph1:C1", "black", [ "h105.6", "v57.6" ] ],
+    [ "led2:A", "bb2:17b.i", "", [ "$bb" ] ],
+    [ "led2:C", "bb2:16b.i", "", [ "$bb" ] ],
+    [ "r2:1", "bb2:17b.j", "", [ "$bb" ] ],
+    [ "led3:A", "bb2:1t.d", "", [ "$bb" ] ],
+    [ "led3:C", "bb2:2t.d", "", [ "$bb" ] ],
+    [ "r3:2", "bb2:17t.e", "", [ "$bb" ] ],
+    [ "led1:A", "bb2:17t.d", "", [ "$bb" ] ],
+    [ "led1:C", "bb2:16t.d", "", [ "$bb" ] ],
+    [ "led4:A", "bb2:1b.i", "", [ "$bb" ] ],
+    [ "led4:C", "bb2:2b.i", "", [ "$bb" ] ],
+    [ "r1:1", "bb2:1b.j", "", [ "$bb" ] ],
+    [ "r4:1", "bb2:1t.e", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
